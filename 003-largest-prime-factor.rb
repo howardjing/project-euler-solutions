@@ -23,7 +23,6 @@ def prime?(number)
 end
 puts "Prime numbers <= 11: #{(1..11).find_all { |i| prime?(i) }}"
 
-$lookup = {}
 def prime_factors(number)
   if prime?(number)
     return [number]
