@@ -15,6 +15,24 @@
 # works nicely even without using a lookup table
 # =====================
 
+# =====================
+# UPDATE: approach 2 can be optimized with the following observation:
+#
+# Given a and b, a pair of factors of n, (ie a * b = n)
+# at least one of a or b must be <= sqrt(n)
+#
+# Proof: 
+# Assume there exists a pair of factors a and b of n such that 
+# a > sqrt(n) and b > sqrt(n).  
+# => a * b > sqrt(n) * sqrt(n)
+# => a * b > n
+# but since a and b are factors of n, a * b = n
+# => n > n, a contradiction
+
+# So by using sqrt(600851475143) as an upper bound to find factors of 
+# 600851475143, and iterating upwards, approach 2 will probably work
+# =====================
+
 def prime?(number)
   (2..(number-1)).each do |possible_factor|
     return false if number % possible_factor == 0
