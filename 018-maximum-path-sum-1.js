@@ -103,3 +103,12 @@ for (var col=0; col < triangle[row].length; col++) {
   }
 }
 console.log("The max sum is: " + max);
+
+/* Alternate pseudocode by ziyue: (top down approach rather than bottom up)
+var maxSum = function(root) {
+  if (root == null) {
+    return 0;
+  }
+  return root.value + Math.max(maxSum(root.left), maxSum(root.right));
+}
+*/
