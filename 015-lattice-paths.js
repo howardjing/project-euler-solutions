@@ -22,3 +22,14 @@ var countRoutes = function(m,n) {
 
 var n = 20;
 console.log("There are " + countRoutes(n,n) + " paths in a " + n + "x" + n + " grid");
+
+/*
+closed form solution: (n+n) choose n
+
+Explanation (via kenny): 
+It takes (n+n) steps in total to go from the top left to the bottom right corner
+of the matrix. However, you are only free to choose n steps down/right. Once you have 
+chosen the n steps to go downwards, the other n steps are necessarily to the right.
+
+So you are free to choose (n+n) choose n steps in total.
+*/
